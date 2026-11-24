@@ -8,6 +8,7 @@ on:
      - next
      - 'v*'
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -59,7 +60,11 @@ jobs:
       fail-fast: false
       max-parallel: 0
       matrix:
-        node-version: ['22', '24', '25', '26']
+        node-version:
+          - 22
+          - 24
+          - 26
+          - 27.0.0-alpha.0.1.1
         runs-on: ['ubuntu-latest', 'windows-latest', 'macos-latest']
     uses: ./.github/workflows/nodejs.yml
     with:
@@ -74,7 +79,11 @@ jobs:
       fail-fast: false
       max-parallel: 0
       matrix:
-        node-version: ['22', '24', '25', '26']
+        node-version:
+          - 22
+          - 24
+          - 26
+          - 27.0.0-alpha.0.1.1
         runs-on: ['ubuntu-latest']
     uses: ./.github/workflows/nodejs.yml
     with:
@@ -89,7 +98,11 @@ jobs:
       fail-fast: false
       max-parallel: 0
       matrix:
-        node-version: ['22', '24', '25', '26']
+        node-version:
+          - 22
+          - 24
+          - 26
+          - 27.0.0-alpha.0.1.1
     runs-on: ubuntu-latest
     timeout-minutes: 150
     steps:
@@ -180,7 +193,11 @@ jobs:
       fail-fast: false
       max-parallel: 0
       matrix:
-        node-version: ['22', '24', '25', '26']
+        node-version:
+          - 22
+          - 24
+          - 26
+          - 27.0.0-alpha.0.1.1
     runs-on: ubuntu-latest
     timeout-minutes: 150
     steps:
